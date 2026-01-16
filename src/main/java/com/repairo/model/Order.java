@@ -3,19 +3,27 @@ package com.repairo.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "orders")
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long userId;
+    private String orderStatus;
 
-    private double totalAmount;
+    public Long getId() {
+        return id;
+    }
 
-    private String paymentStatus;
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    private String orderStatus; // PLACED, CONFIRMED, COMPLETED
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
 }
-
