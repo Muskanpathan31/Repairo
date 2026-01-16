@@ -3,20 +3,37 @@ package com.repairo.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "payments")
 public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long userId;
+    private String paymentMethod;
+    private String status;
 
-    private double amount;
+    public Long getId() {
+        return id;
+    }
 
-    private String paymentMethod; // GPAY, PHONEPE, COD
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-    private String status; // PENDING, SUCCESS, FAILED
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
 
-    // getters & setters
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
+
