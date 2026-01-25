@@ -1,8 +1,13 @@
 package com.repairo.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "orders")  // <-- avoid reserved keyword
 public class Order {
 
     @Id
@@ -11,6 +16,7 @@ public class Order {
 
     private String orderStatus;
 
+    // getters and setters
     public Long getId() {
         return id;
     }
